@@ -17,8 +17,39 @@ namespace OgrenciNotBilgisi
         {
             InitializeComponent();
         }
+        
         Baglanti bgl = new Baglanti();
        public string no;
+
+        public void OrtalamaGetirme()
+        {
+            SqlCommand command = new SqlCommand("select  avg(Vize) from TblOgrenciBilgi where vize >0", bgl.baglan());
+            SqlDataReader dr = command.ExecuteReader();
+            while (dr.Read())
+            {
+                lblvizeortalama.Text = dr[0].ToString();
+
+            }
+            bgl.baglan().Close();
+
+            SqlCommand command1 = new SqlCommand("select  avg(Final) from TblOgrenciBilgi where Final >0", bgl.baglan());
+            SqlDataReader dr1 = command1.ExecuteReader();
+            while (dr1.Read())
+            {
+                lblfinalortalama.Text = dr1[0].ToString();
+
+            }
+            bgl.baglan().Close();
+
+            SqlCommand command2 = new SqlCommand("select  avg(But) from TblOgrenciBilgi where But >0", bgl.baglan());
+            SqlDataReader dr2 = command2.ExecuteReader();
+            while (dr2.Read())
+            {
+                lblbutortalama.Text = dr2[0].ToString();
+
+            }
+            bgl.baglan().Close();
+        }
 
         private void FrnOgrenciDetay_Load(object sender, EventArgs e)
         {
@@ -46,6 +77,7 @@ namespace OgrenciNotBilgisi
                 lblbutortalama.Visible = true;
                 label14.Visible = true;
             }
+            OrtalamaGetirme();
             /*Büt yeri ortlama yüksek oldugunda kapanıyor ve ogrenci goremiyor veri tabanına büt acık-kapalı verisi ekle ve ortalama yuksek oldugunda acılan but kapanmamalı. */
         }
 
