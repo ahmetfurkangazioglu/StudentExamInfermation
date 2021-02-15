@@ -99,5 +99,10 @@ namespace OgrenciNotBilgisi
             bgl.baglan().Close();
             MessageBox.Show("Şifreniz Güncellendi. Yeni Şifreniz:", txtYeniSifre.Text);
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace OgrenciNotBilgisi
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblortalama = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lbldurum = new System.Windows.Forms.Label();
             this.lblharfnotu = new System.Windows.Forms.Label();
             this.lblbut = new System.Windows.Forms.Label();
@@ -56,16 +57,15 @@ namespace OgrenciNotBilgisi
             this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblbutortalama = new System.Windows.Forms.Label();
+            this.lblfinalortalama = new System.Windows.Forms.Label();
+            this.lblvizeortalama = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblfinal = new System.Windows.Forms.Label();
             this.lblvize = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblvizeortalama = new System.Windows.Forms.Label();
-            this.lblfinalortalama = new System.Windows.Forms.Label();
-            this.lblbutortalama = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -271,6 +271,7 @@ namespace OgrenciNotBilgisi
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sınav Bilgisi";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // lblortalama
             // 
@@ -294,6 +295,19 @@ namespace OgrenciNotBilgisi
             this.label22.Size = new System.Drawing.Size(294, 17);
             this.label22.TabIndex = 5;
             this.label22.Text = "Bize ulasmak için: afg0338@hotmail.com";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label14.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label14.Location = new System.Drawing.Point(141, 115);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(198, 21);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Büt Sınav Ortalaması:";
+            this.label14.Visible = false;
             // 
             // lbldurum
             // 
@@ -377,6 +391,67 @@ namespace OgrenciNotBilgisi
             this.label6.Text = "Büt:";
             this.label6.Visible = false;
             // 
+            // lblbutortalama
+            // 
+            this.lblbutortalama.AutoSize = true;
+            this.lblbutortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblbutortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbutortalama.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblbutortalama.Location = new System.Drawing.Point(347, 112);
+            this.lblbutortalama.Name = "lblbutortalama";
+            this.lblbutortalama.Size = new System.Drawing.Size(26, 21);
+            this.lblbutortalama.TabIndex = 4;
+            this.lblbutortalama.Text = "--";
+            this.lblbutortalama.Visible = false;
+            // 
+            // lblfinalortalama
+            // 
+            this.lblfinalortalama.AutoSize = true;
+            this.lblfinalortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblfinalortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfinalortalama.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblfinalortalama.Location = new System.Drawing.Point(347, 76);
+            this.lblfinalortalama.Name = "lblfinalortalama";
+            this.lblfinalortalama.Size = new System.Drawing.Size(26, 21);
+            this.lblfinalortalama.TabIndex = 4;
+            this.lblfinalortalama.Text = "--";
+            // 
+            // lblvizeortalama
+            // 
+            this.lblvizeortalama.AutoSize = true;
+            this.lblvizeortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblvizeortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblvizeortalama.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblvizeortalama.Location = new System.Drawing.Point(349, 40);
+            this.lblvizeortalama.Name = "lblvizeortalama";
+            this.lblvizeortalama.Size = new System.Drawing.Size(26, 21);
+            this.lblvizeortalama.TabIndex = 4;
+            this.lblvizeortalama.Text = "--";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label13.Location = new System.Drawing.Point(141, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(207, 21);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Final Sınav Ortalaması:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label12.Location = new System.Drawing.Point(141, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(202, 21);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Vize Sınav Ortalaması:";
+            // 
             // lblfinal
             // 
             this.lblfinal.AutoSize = true;
@@ -411,80 +486,6 @@ namespace OgrenciNotBilgisi
             this.label5.Size = new System.Drawing.Size(66, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Final:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label12.Location = new System.Drawing.Point(141, 39);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(202, 21);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Vize Sınav Ortalaması:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label13.Location = new System.Drawing.Point(141, 77);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(207, 21);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Final Sınav Ortalaması:";
-            // 
-            // lblvizeortalama
-            // 
-            this.lblvizeortalama.AutoSize = true;
-            this.lblvizeortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblvizeortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblvizeortalama.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblvizeortalama.Location = new System.Drawing.Point(349, 40);
-            this.lblvizeortalama.Name = "lblvizeortalama";
-            this.lblvizeortalama.Size = new System.Drawing.Size(26, 21);
-            this.lblvizeortalama.TabIndex = 4;
-            this.lblvizeortalama.Text = "--";
-            // 
-            // lblfinalortalama
-            // 
-            this.lblfinalortalama.AutoSize = true;
-            this.lblfinalortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblfinalortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfinalortalama.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblfinalortalama.Location = new System.Drawing.Point(347, 76);
-            this.lblfinalortalama.Name = "lblfinalortalama";
-            this.lblfinalortalama.Size = new System.Drawing.Size(26, 21);
-            this.lblfinalortalama.TabIndex = 4;
-            this.lblfinalortalama.Text = "--";
-            // 
-            // lblbutortalama
-            // 
-            this.lblbutortalama.AutoSize = true;
-            this.lblbutortalama.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblbutortalama.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbutortalama.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblbutortalama.Location = new System.Drawing.Point(347, 112);
-            this.lblbutortalama.Name = "lblbutortalama";
-            this.lblbutortalama.Size = new System.Drawing.Size(26, 21);
-            this.lblbutortalama.TabIndex = 4;
-            this.lblbutortalama.Text = "--";
-            this.lblbutortalama.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label14.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label14.Location = new System.Drawing.Point(141, 115);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(198, 21);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Büt Sınav Ortalaması:";
-            this.label14.Visible = false;
             // 
             // FrnOgrenciDetay
             // 

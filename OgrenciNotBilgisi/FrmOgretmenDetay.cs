@@ -68,6 +68,12 @@ namespace OgrenciNotBilgisi
         }
         int ortalama, vize = 0, final = 0, büt = 0;
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             SqlDataAdapter da = new SqlDataAdapter("select * from TblOgrenciBilgi where Ad  like '%"+ textBox4.Text  + "%' or no like  '%" + textBox4.Text + "%' " , bgl.baglan());
